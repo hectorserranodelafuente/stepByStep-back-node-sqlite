@@ -1,7 +1,7 @@
-const env = require('../../env.js')
+.const env = require('../../env.js')
 // let sqlite3 = require('sqlite3').verbose();
 
-import { GoogleGenAI,Type } from "@google/genai";
+ const { GoogleGenAI,Type } = require("@google/genai");
 
 const ai = new GoogleGenAI({ apiKey: "" });
 
@@ -36,6 +36,7 @@ async function main() {
     responseSchema: schemaYogaDisciplines
   }
   });
+  console.log(response.text)
   
   return response
 }
@@ -44,12 +45,16 @@ async function main() {
 
 
 
-class pageOneExample{
+class PageOneExample{
     
     constructor(){}
 
-    yogaDisciplines(req){    
-        return main().response
+    async yogaDisciplines(req,res){    
+        main()
+        let _response = await main()   
+        res.json(_response.text)
     }
 
 }
+
+module.exports = PageOneExample
