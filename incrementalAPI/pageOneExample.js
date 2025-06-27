@@ -52,7 +52,7 @@ class PageOneExample{
     async yogaDisciplines(req,res){    
         main()
         let _response = await main()   
-        res.json(_response.text)
+        res.json(_response)
     }
 
 }
