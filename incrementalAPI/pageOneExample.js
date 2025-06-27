@@ -1,4 +1,4 @@
-.const env = require('../../env.js')
+const env = require('../../env.js')
 // let sqlite3 = require('sqlite3').verbose();
 
  const { GoogleGenAI,Type } = require("@google/genai");
