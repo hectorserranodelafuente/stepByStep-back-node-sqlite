@@ -3,7 +3,7 @@ const env = require('../../env.js')
 
 const { GoogleGenAI,Type } = require("@google/genai");
 
-const ai = new GoogleGenAI({ apiKey: env.development.confAI  });
+const ai = new GoogleGenAI({ apiKey: env.development.confAI.key  });
 
 const schemaYogaDisciplines = {
   description:"List of different Yoga disciplines",
